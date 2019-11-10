@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>421</width>
-    <height>321</height>
+    <width>431</width>
+    <height>181</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -17,16 +17,16 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>深度文件管理器右键菜单编辑器</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QListView" name="listView">
+   <widget class="QListWidget" name="lstEntry">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>10</y>
       <width>131</width>
-      <height>301</height>
+      <height>121</height>
      </rect>
     </property>
    </widget>
@@ -35,13 +35,16 @@
      <rect>
       <x>150</x>
       <y>10</y>
-      <width>261</width>
+      <width>271</width>
       <height>161</height>
      </rect>
     </property>
     <layout class="QFormLayout" name="formLayout">
      <property name="labelAlignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+     <property name="formAlignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
      </property>
      <item row="0" column="0">
       <widget class="QLabel" name="Label">
@@ -69,25 +72,13 @@
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="Label_3">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
        <property name="text">
         <string>可执行文件</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="Label_4">
-       <property name="text">
-        <string>参数</string>
-       </property>
-      </widget>
-     </item>
-     <item row="3" column="1">
-      <widget class="QLineEdit" name="editArgs"/>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="Label_5">
-       <property name="text">
-        <string>图标</string>
        </property>
       </widget>
      </item>
@@ -123,6 +114,23 @@
        </item>
       </layout>
      </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="Label_4">
+       <property name="text">
+        <string>参数</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="editArgs"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="Label_5">
+       <property name="text">
+        <string>图标</string>
+       </property>
+      </widget>
+     </item>
      <item row="4" column="1">
       <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
@@ -156,6 +164,48 @@
       </layout>
      </item>
     </layout>
+   </widget>
+   <widget class="QPushButton" name="btnNew">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>141</y>
+      <width>39</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>新建</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDelete">
+    <property name="geometry">
+     <rect>
+      <x>56</x>
+      <y>141</y>
+      <width>39</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删除</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSave">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>101</x>
+      <y>141</y>
+      <width>39</width>
+      <height>26</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>保存</string>
+    </property>
    </widget>
   </widget>
  </widget>
