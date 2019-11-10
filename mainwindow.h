@@ -13,7 +13,13 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = nullptr);
+    QString showDialog(QString filter);
     ~MainWindow();
+
+private slots:
+    void on_btnExec_clicked();
+
+    void on_btnIcon_clicked();
 
 private:
     Ui::MainWindow *ui;
