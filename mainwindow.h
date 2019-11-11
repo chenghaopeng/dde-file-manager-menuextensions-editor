@@ -16,7 +16,10 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     QString showDialog(QString filter);
     void readFromFile();
+    void writeToFile();
     void showEntry();
+    void saveEntry();
+    void showInList();
     ~MainWindow();
 
 private slots:
@@ -30,11 +33,16 @@ private slots:
     
     void on_lstEntry_itemClicked(QListWidgetItem *item);
     
-    void on_lstEntry_currentRowChanged(int currentRow);
+    void on_lstEntry_itemChanged(QListWidgetItem *item);
+    
+    void on_btnDelete_clicked();
+    
+    void on_btnSave_clicked();
     
 private:
     Ui::MainWindow *ui;
     QJsonArray *entries;
+    int currentRow;
 };
 
 #endif // MAINWINDOW_H
