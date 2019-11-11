@@ -20,6 +20,7 @@ public:
     void showEntry();
     void saveEntry();
     void showInList();
+    void swapEntry(int i, int  j);
     ~MainWindow();
 
 private slots:
@@ -33,11 +34,15 @@ private slots:
     
     void on_lstEntry_itemClicked(QListWidgetItem *item);
     
-    void on_lstEntry_itemChanged(QListWidgetItem *item);
-    
     void on_btnDelete_clicked();
     
     void on_btnSave_clicked();
+    
+    void on_btnAddRefresh_clicked();
+    
+    void on_btnUp_clicked();
+    
+    void on_btnDown_clicked();
     
 private:
     Ui::MainWindow *ui;

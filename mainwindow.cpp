@@ -173,11 +173,6 @@ void MainWindow::on_lstEntry_itemClicked(QListWidgetItem *item)
     this->showEntry();
 }
 
-void MainWindow::on_lstEntry_itemChanged(QListWidgetItem *item)
-{
-    this->showEntry();
-}
-
 void MainWindow::on_btnDelete_clicked()
 {
     if (this->currentRow == -1) return;
@@ -190,4 +185,44 @@ void MainWindow::on_btnSave_clicked()
 {
     this->saveEntry();
     this->writeToFile();
+}
+
+void MainWindow::on_btnAddRefresh_clicked()
+{
+    QJsonArray notShowIn, args;
+    notShowIn.append("");
+    args.append("");
+    QJsonObject jsonObject;
+    jsonObject.insert("MenuType", "EmptyArea");
+    jsonObject.insert("Text[zh_CN]", "刷新");
+    jsonObject.insert("Exec", "");
+    jsonObject.insert("Args", args);
+    jsonObject.insert("NotShowIn", notShowIn);
+    jsonObject.insert("Icon", "");
+    this->entries->append(jsonObject);
+    this->showInList();
+    this->writeToFile();
+}
+
+void MainWindow::swapEntry(int i, int  j) {
+    if (i > j) std::swap(i, j);
+    QJsonValue temp = this->entries->at(i);
+    this->entries->removeAt(i);
+    this->entries->insert(j, temp);
+    this->showInList();
+    this->writeToFile();
+}
+
+void MainWindow::on_btnUp_clicked()
+{
+    if (this->currentRow <= 0) return;
+    this->currentRow--;
+    swapEntry(this->currentRow, this->currentRow + 1);
+}
+
+void MainWindow::on_btnDown_clicked()
+{
+    if (this->currentRow >= this->ui->lstEntry->count() - 1) return;
+    this->currentRow++;
+    swapEntry(this->currentRow, this->currentRow - 1);
 }
