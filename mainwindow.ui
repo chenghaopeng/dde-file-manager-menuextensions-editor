@@ -16,6 +16,18 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>431</width>
+    <height>251</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>431</width>
+    <height>251</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>深度文件管理器右键菜单编辑器</string>
   </property>
